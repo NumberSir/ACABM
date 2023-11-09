@@ -35,90 +35,90 @@
   // Define a constant called ACABMmenuDictionary that contains an object with properties for each menu item in the Auto click and buy mod.
   const ACABMmenuDictionary = {
     main: {
-      name: "AutoClick",
-      description: "Auto click BigCookie. Autoclick speed 1000ms = 1second",
+      name: "自动点击",
+      description: "自动点击大饼干， 1000毫秒 = 1秒。",
       values: {
-        0: "OFF",
-        1: "ON",
+        0: "禁用",
+        1: "启用",
       },
     },
     autobuy: {
-      name: "AutoBuy",
+      name: "自动购买",
       description:
-        'Buy "best CPS" buildings and upgrades automatically. Status shown below when enabled.',
+          '自动购买“最佳CpS”的建筑、升级。',
       values: {
-        0: "OFF",
-        1: "ON",
+        0: "禁用",
+        1: "启用",
       },
     },
     gold: {
-      name: "AutoClick Special",
-      description: "Auto click Golden cookie, Reindeer, Wrath.",
+      name: "自动点击/特殊",
+      description: "自动点击黄金饼干、驯鹿饼干、愤怒饼干。",
       values: {
-        0: "OFF",
-        1: "ON",
+        0: "禁用",
+        1: "启用",
       },
     },
     frenzy: {
-      name: "AutoClick Frenzy",
+      name: "自动点击/狂热",
       description:
-        'Auto click BigCookie during frenzy/click frenzy, not needed if you already use the main "AutoClick" feature.',
+          '在狂热期间自动点击大饼干。如果已经启用“自动点击”就不用再启用这个了。',
       values: {
-        0: "OFF",
-        1: "ON",
+        0: "禁用",
+        1: "启用",
       },
     },
     wrinklers: {
-      name: "Auto Wrinklers",
+      name: "自动点击/饼干虫",
       description:
-        "Auto Pop Wrinkers when reach the max amount set. Default is wait until max amount of Wrinklers, exclude Shiny.",
+          "在数量超过设定上限后自动戳破饼干虫。默认达到最大上限后才会开始戳破，闪光饼干虫不算在内。",
       values: {
-        0: "OFF",
-        1: "ON",
+        0: "禁用",
+        1: "启用",
       },
     },
     ascendluck: {
-      name: "Ascend Luck",
+      name: "幸运飞升",
       description:
-        "Used for unlocking Lucky digit, Lucky number, and Lucky payout. Automatically Ascends you when conditions are met and toggles this feature to off. Turn back on manually if you have more to unlock. Does not buy the Heavenly upgrade for you.",
+          "用于解锁 Lucky digit, Lucky number，与 Lucky payout 成就。会在你满足条件时自动飞升，并在这次触发后关闭此功能。下次如果你还想使用请手动启用。注意本功能并不会自动为你购买天堂升级。",
       values: {
-        0: "OFF",
-        1: "ON",
+        0: "禁用",
+        1: "启用",
       },
     },
     protect: {
-      name: "AutoBuy Protect",
+      name: "自动购买保护",
       description:
-        "Calculates Lucky and Frenzy requirements so that autobuy doesn't go below them. If Autobuy seems stuck try disabling this feature",
+          "会自动判断狂热和幸运效果的满足条件，以确保自动购买不会出现问题。如果自动购买功能确实出了问题，请关闭此功能。",
       values: {
-        0: "OFF",
-        1: "ON",
+        0: "禁用",
+        1: "启用",
       },
     },
     fortune: {
-      name: "Auto Fortune",
-      description: "Auto click on News ticker fortunes.",
+      name: "自动点击/幸运",
+      description: "自动点击新的幸运纸条。",
       values: {
-        0: "OFF",
-        1: "ON",
+        0: "禁用",
+        1: "启用",
       },
     },
     hotkeys: {
-      name: "Hotkeys",
+      name: "快捷键",
       description:
-        "Allows you to use the old way of using the mod with hotkeys. New features will not have hotkeys.",
+          "让你可以通过快捷键的方式操作本模组。部分新功能没有对应的快捷键。",
       values: {
-        0: "OFF",
-        1: "ON",
+        0: "禁用",
+        1: "启用",
       },
     },
     krumblor: {
-      name: "AutoPet Krumblor",
+      name: "自动抚养饼干龙",
       description:
-        'Pets Krumblor when you reach lvl 4 to unlock Dragon drops. Krumblor\'s Menu must be open and own the Heavenly Upgrade "Pet the dragon". Turns off if you have all 4 drops, or do not meet the requirements.',
+          '在达到等级 4 之后自动抚养饼干龙。注意仅在饼干龙的菜单开启，且已经解锁天堂升级“养龙”时才会生效。如果你尚未拥有全部 4 种掉落物，或是尚未满足条件，请不要启用本功能。',
       values: {
-        0: "OFF",
-        1: "ON",
+        0: "禁用",
+        1: "启用",
       },
     },
   };
@@ -147,10 +147,10 @@
 
       // Call the Notify function with four arguments to set up a notification that informs the user that the Auto click and buy mod has been loaded and provides instructions for turning the mod on and off in the Options menu.
       Notify(
-        "Auto click and buy loaded!",
-        'Turn settings On/Off in the <b><a href="#" onclick=Game.ShowMenu("prefs");>Options</a></b> Menu.',
-        [30, 6],
-        20
+          "自动点击与购买模组已加载！",
+          '请在<b><a href="#" onclick=Game.ShowMenu("prefs");>选项</a></b>菜单中启用/禁用相关功能。',
+          [30, 6],
+          20
       );
 
       /**
@@ -173,29 +173,29 @@
            * @property {Function} accessors.sub - Removes an object from the schema.
            * @property {Function} accessors.price - Returns the price of an object.
            * @property {Function} accessors.lasting - Returns the lasting value of an object.
-           */      
+           */
           this.schema = [
             {
               objects: function() {
                 return Game.UpgradesInStore.filter(function(e) {
                   return (
-                    [].indexOf(e.id) < 0 && 
-                    e.pool != "prestige" &&
-                    e.pool != "toggle" &&
-                    !Game.vault.includes(e.id) &&
-                    !ACABM.settings.upgradevault.includes(e.id)  
+                      [].indexOf(e.id) < 0 &&
+                      e.pool != "prestige" &&
+                      e.pool != "toggle" &&
+                      !Game.vault.includes(e.id) &&
+                      !ACABM.settings.upgradevault.includes(e.id)
                   );
                 });
               },
               accessors: {
                 add: function(e) {
-                  e.bought = 1;  
+                  e.bought = 1;
                 },
                 sub: function(e) {
                   e.bought = 0;
                 },
                 price: function(e) {
-                  return e.basePrice; 
+                  return e.basePrice;
                 },
                 lasting: function(e) {
                   return e.lasting;
@@ -206,12 +206,12 @@
               objects: function() {
                 return Game.ObjectsById.filter(function(e) {
                   return [].indexOf(e.id) < 0 &&
-                         !ACABM.settings.buildingvault.includes(e.id);  
+                      !ACABM.settings.buildingvault.includes(e.id);
                 });
               },
               accessors: {
                 add: function(e) {
-                  e.amount++;   
+                  e.amount++;
                 },
                 sub: function(e) {
                   e.amount--;
@@ -261,40 +261,40 @@
           Game.Win = function () {};
 
           var res = list_generator().map(
-            function (e) {
-              var lasting = this.item.lasting(e);
-              var price = Math.round(this.item.price(e));
-              // -- Garden Upgrade Calc -- currently the only upgrades using lasting.
-              if (lasting) {
-                price = Math.round(price * Game.cookiesPs * 60);
-              }
-              // -- Dragon Upgrade Calc -- currently the only upgrades with price 999.
-              if (price == 999) {
-                price =
-                  Game.unbuffedCps *
-                  60 *
-                  30 *
-                  (Game.dragonLevel < Game.dragonLevels.length - 1 ? 1 : 0.1);
-              }
+              function (e) {
+                var lasting = this.item.lasting(e);
+                var price = Math.round(this.item.price(e));
+                // -- Garden Upgrade Calc -- currently the only upgrades using lasting.
+                if (lasting) {
+                  price = Math.round(price * Game.cookiesPs * 60);
+                }
+                // -- Dragon Upgrade Calc -- currently the only upgrades with price 999.
+                if (price == 999) {
+                  price =
+                      Game.unbuffedCps *
+                      60 *
+                      30 *
+                      (Game.dragonLevel < Game.dragonLevels.length - 1 ? 1 : 0.1);
+                }
 
-              this.item.add(e);
-              Game.CalculateGains();
-              var cps = this.calc.ecps() + Game.computedMouseCps * this.rate;
-              this.item.sub(e);
-              Game.CalculateGains();
-              return {
-                obj: e,
-                price: price,
-                acc: this.calc.cps_acc(this.base_cps, cps, price),
-              };
-            }.bind({
-              item: item,
-              calc: this,
-              rate: mouse_rate,
-              base_cps:
-                (Game.cookiesPs ? this.ecps() : 0.001) +
-                Game.computedMouseCps * mouse_rate,
-            })
+                this.item.add(e);
+                Game.CalculateGains();
+                var cps = this.calc.ecps() + Game.computedMouseCps * this.rate;
+                this.item.sub(e);
+                Game.CalculateGains();
+                return {
+                  obj: e,
+                  price: price,
+                  acc: this.calc.cps_acc(this.base_cps, cps, price),
+                };
+              }.bind({
+                item: item,
+                calc: this,
+                rate: mouse_rate,
+                base_cps:
+                    (Game.cookiesPs ? this.ecps() : 0.001) +
+                    Game.computedMouseCps * mouse_rate,
+              })
           );
 
           Game.Win = func;
@@ -312,21 +312,21 @@
           var zero_buy = Math.sqrt(Game.cookiesEarned * Game.cookiesPs);
           for (var i = 0; i < this.schema.length; i++)
             pool = pool.concat(
-              this.calc_bonus(
-                this.schema[i].accessors,
-                this.schema[i].objects,
-                mouse_rate || 0
-              )
+                this.calc_bonus(
+                    this.schema[i].accessors,
+                    this.schema[i].objects,
+                    mouse_rate || 0
+                )
             );
 
           return pool.reduce(function (m, v) {
             return m.acc == 0 && m.price < zero_buy
-              ? m
-              : v.acc == 0 && v.price < zero_buy
-              ? v
-              : m.acc < v.acc
-              ? v
-              : m;
+                ? m
+                : v.acc == 0 && v.price < zero_buy
+                    ? v
+                    : m.acc < v.acc
+                        ? v
+                        : m;
           }, pool[0]);
         }
       }
@@ -441,14 +441,14 @@
         guard() {
           var t = this.total;
           this.total =
-            1000 * (Game.hasBuff("Frenzy") != 0 ? 1 : 0) +
-            Game.BuildingsOwned +
-            Game.UpgradesOwned;
+              1000 * (Game.hasBuff("Frenzy") != 0 ? 1 : 0) +
+              Game.BuildingsOwned +
+              Game.UpgradesOwned;
           if (
-            this.actions.timeouts.buy &&
-            (t != this.total ||
-              !this.actions.autobuy.id ||
-              this.target.price <= Game.cookies - this.calc.ecps())
+              this.actions.timeouts.buy &&
+              (t != this.total ||
+                  !this.actions.autobuy.id ||
+                  this.target.price <= Game.cookies - this.calc.ecps())
           )
             this.unqueue_action("buy");
         }
@@ -461,39 +461,39 @@
         autobuy() {
           if (this.actions.timeouts.buy) {
             ACABM.abmessage["buy"] =
-              "Waiting (" +
-              Beautify(
-                (this.target.price - Game.cookies) / this.calc.ecps(),
-                1
-              ) +
-              "s) for " +
-              this.target.name;
+                "正在等待 (" +
+                Beautify(
+                    (this.target.price - Game.cookies) / this.calc.ecps(),
+                    1
+                ) +
+                "s) 以购买 " +
+                this.target.dname;
             return;
           }
           var info = this.calc.find_best(
-            this.actions.main.id ? 1000 / this.actions.main.delay : 0
+              this.actions.main.id ? 1000 / this.actions.main.delay : 0
           );
 
           var protect =
-            this.protect && Game.Has("Get lucky") != 0
-              ? (Game.hasBuff("Frenzy") != 0 ? 1 : 7) * Game.cookiesPs * 1200
-              : 0;
+              this.protect && Game.Has("Get lucky") != 0
+                  ? (Game.hasBuff("Frenzy") != 0 ? 1 : 7) * Game.cookiesPs * 1200
+                  : 0;
           var wait = (protect + info.price - Game.cookies) / this.calc.ecps();
           if (!isFinite(wait) || wait > 120) {
             ACABM.abmessage["buy"] =
-              'AutoBuy wants to buy: "' +
-              info.obj.name +
-              '" but the wait time (' +
-              Beautify(wait, 1) +
-              "s) is over 120 seconds";
+                '自动购买想要购买："' +
+                info.obj.dname +
+                '" 但需要等待一段时间：(' +
+                Beautify(wait, 1) +
+                "s)";
             return;
           }
 
           var msg =
-            (wait > 0 ? "Waiting (" + Beautify(wait, 1) + "s) for" : "Buying") +
-            ' "' +
-            info.obj.name +
-            '"';
+              (wait > 0 ? "等待 (" + Beautify(wait, 1) + "s) 以购买" : "正在购买") +
+              ' "' +
+              info.obj.dname +
+              '"';
           ACABM.abmessage["buy"] = msg;
           //console.log("For {cps = " + Beautify(Game.cookiesPs, 1) + ", protect = " + Beautify(protect) + "} best candidate is", info);
           this.say(msg);
@@ -501,22 +501,22 @@
             this.target.name = info.obj.name;
             this.target.price = protect + info.price;
             this.queue_action(
-              "buy",
-              1000 * (Game.cookiesPs ? wait + 0.05 : 60),
-              function () {
-                if (info.price <= Game.cookies) {
-                  this.say('Buying "' + info.obj.name + '"');
-                  if (info.obj.name === "One mind") {
-                    Game.UpgradesById["69"].buy(1);
-                    Game.ClosePrompt();
-                    this.total++;
-                    this.unqueue_action("buy");
-                  } else {
-                    info.obj.buy();
-                    this.total++;
+                "buy",
+                1000 * (Game.cookiesPs ? wait + 0.05 : 60),
+                function () {
+                  if (info.price <= Game.cookies) {
+                    this.say('正在购买 "' + info.obj.dname + '"');
+                    if (info.obj.name === "One mind") {
+                      Game.UpgradesById["69"].buy(1);
+                      Game.ClosePrompt();
+                      this.total++;
+                      this.unqueue_action("buy");
+                    } else {
+                      info.obj.buy();
+                      this.total++;
+                    }
                   }
-                }
-              }.bind(this)
+                }.bind(this)
             );
           } else {
             if (info.obj.name === "One mind") {
@@ -554,38 +554,38 @@
                   break;
                 default:
                   var sname =
-                    i.slice(0, 0) +
-                    "[" +
-                    i.slice(0, 1).toUpperCase() +
-                    "]" +
-                    i.slice(1);
+                      i.slice(0, 0) +
+                      "[" +
+                      i.slice(0, 1).toUpperCase() +
+                      "]" +
+                      i.slice(1);
               }
               act.push(sname + ": " + b2s(this.actions[i].id));
             }
           }
-          var msg = "<p>[S]tatus</p><p>keyboard hotkeys enclosed []</p>";
+          var msg = "<p>[S]状态</p><p>键盘快捷键有： []</p>";
           msg += "<p>" + act.join(", ") + "</p>";
           msg +=
-            "<p>[P]rotect - cookie protection for max frenzy/lucky combo: " +
-            b2s(this.protect) +
-            "</p>";
+              "<p>[P]保护 - 确保在狂热/幸运状态下点击大饼干：" +
+              b2s(this.protect) +
+              "</p>";
           msg +=
-            "<p>[M]ain auto click speed: " +
-            this.actions["main"].delay +
-            "ms</p>";
+              "<p>[M]自动点击鼠标速度" +
+              this.actions["main"].delay +
+              "ms</p>";
           msg +=
-            "<p>Increase the auto click speed using keyboard combo shift + 1 to decrease shift + 2</p>";
+              "<p>请使用 shift + 1 提升数值，请使用 shift + 2 减小数值</p>";
 
           if (this.actions.timeouts.buy) {
             msg +=
-              "<p>waiting " +
-              Beautify(
-                (this.target.price - Game.cookies) / this.calc.ecps(),
-                1
-              ) +
-              ' s for "' +
-              this.target.name +
-              '"</p>';
+                "<p>等待 " +
+                Beautify(
+                    (this.target.price - Game.cookies) / this.calc.ecps(),
+                    1
+                ) +
+                ' 秒以购买 "' +
+                this.target.dname +
+                '"</p>';
           }
           this.say(msg);
         }
@@ -614,100 +614,100 @@
           }
 
           if (
-            Game.HasUnlocked("Lucky digit") &&
-            Game.HasUnlocked("Lucky number") &&
-            Game.HasUnlocked("Lucky payout")
+              Game.HasUnlocked("Lucky digit") &&
+              Game.HasUnlocked("Lucky number") &&
+              Game.HasUnlocked("Lucky payout")
           ) {
             ACABM.abmessage["ALmsg"] =
-              "You have unlocked all Ascend Luck upgrades: Lucky digit, Lucky number, and Lucky payout.";
+                "你已经解锁了以下所有“幸运”相关的天堂升级：Lucky digit, Lucky number, 和 Lucky payout。";
             doascendluckOff();
             return;
           }
 
           if (Game.HasUnlocked("Heavenly luck")) {
             if (
-              !Game.HasUnlocked("Lucky digit") &&
-              Game.HasUnlocked("Heavenly luck")
+                !Game.HasUnlocked("Lucky digit") &&
+                Game.HasUnlocked("Heavenly luck")
             ) {
               if (
-                (Game.prestige + Game.ascendMeterLevel).toString().split("7")
-                  .length -
+                  (Game.prestige + Game.ascendMeterLevel).toString().split("7")
+                      .length -
                   1 >=
-                1
+                  1
               ) {
                 doascendLuck();
               } else {
                 ACABM.abmessage["ALmsg"] =
-                  "Waiting for prestige level to contain one(1) 7";
+                    "正在等待威望等级包含一个 7";
               }
             } else if (!Game.HasUnlocked("Lucky number")) {
               if (
-                Game.HasUnlocked("Lucky digit") &&
-                Game.HasUnlocked("Lasting fortune")
+                  Game.HasUnlocked("Lucky digit") &&
+                  Game.HasUnlocked("Lasting fortune")
               ) {
                 if (
-                  (Game.prestige + Game.ascendMeterLevel).toString().split("7")
-                    .length -
+                    (Game.prestige + Game.ascendMeterLevel).toString().split("7")
+                        .length -
                     1 >=
-                  2
+                    2
                 ) {
                   doascendLuck();
                 } else {
                   ACABM.abmessage["ALmsg"] =
-                    "Waiting for prestige level to contain two(2) 7's";
+                      "正在等待威望等级包含两个 7";
                 }
               } else {
                 ACABM.abmessage["ALmsg"] =
-                  "You need to own Heavenly Upgrade(s): " +
-                  (Game.HasUnlocked("Lucky digit") ? "" : '"Lucky digit"') +
-                  " " +
-                  (Game.HasUnlocked("Lucky digit") +
+                    "你需要以下天堂升级：" +
+                    (Game.HasUnlocked("Lucky digit") ? "" : '"Lucky digit"') +
+                    " " +
+                    (Game.HasUnlocked("Lucky digit") +
                     Game.HasUnlocked("Lasting fortune") >
-                  0
-                    ? ""
-                    : " and ") +
-                  "  " +
-                  (Game.HasUnlocked("Lasting fortune")
-                    ? ""
-                    : '"Lasting fortune"') +
-                  " to use this feature.";
+                    0
+                        ? ""
+                        : " 和 ") +
+                    "  " +
+                    (Game.HasUnlocked("Lasting fortune")
+                        ? ""
+                        : '"Lasting fortune"') +
+                    " to use this feature.";
                 doascendluckOff();
               }
             } else if (!Game.HasUnlocked("Lucky payout")) {
               if (
-                Game.HasUnlocked("Lucky number") &&
-                Game.HasUnlocked("Decisive fate")
+                  Game.HasUnlocked("Lucky number") &&
+                  Game.HasUnlocked("Decisive fate")
               ) {
                 if (
-                  (Game.prestige + Game.ascendMeterLevel).toString().split("7")
-                    .length -
+                    (Game.prestige + Game.ascendMeterLevel).toString().split("7")
+                        .length -
                     1 >=
-                  4
+                    4
                 ) {
                   doascendLuck();
                 } else {
                   ACABM.abmessage["ALmsg"] =
-                    "Waiting for prestige level to contain four(4) 7's";
+                      "正在等待威望等级包含四个 7";
                 }
               } else {
                 ACABM.abmessage["ALmsg"] =
-                  "You do not own the following required Heavenly Upgrade(s): " +
-                  (Game.HasUnlocked("Lucky number") ? "" : '"Lucky number"') +
-                  " " +
-                  (Game.HasUnlocked("Lucky number") +
+                    "你尚未拥有以下所需的天堂升级：" +
+                    (Game.HasUnlocked("Lucky number") ? "" : '"Lucky number"') +
+                    " " +
+                    (Game.HasUnlocked("Lucky number") +
                     Game.HasUnlocked("Decisive fate") >
-                  0
-                    ? ""
-                    : " and ") +
-                  "  " +
-                  (Game.HasUnlocked("Decisive fate") ? "" : '"Decisive fate"') +
-                  " to use this feature.";
+                    0
+                        ? ""
+                        : " 和 ") +
+                    "  " +
+                    (Game.HasUnlocked("Decisive fate") ? "" : '"Decisive fate"') +
+                    "，所以暂无法使用本功能。";
                 doascendluckOff();
               }
             }
           } else {
             ACABM.abmessage["ALmsg"] =
-              'You do not own the following required Heavenly Upgrade: "Heavenly luck" to use this feature.';
+                '你尚未拥有以下所需的天堂升级："Heavenly luck"，所以暂无法使用本功能。';
             doascendluckOff();
           }
         }
@@ -748,10 +748,10 @@
 
             // Is current amount of wrinklers at max?
             if (
-              Object.keys(wrinklersNormal).length +
+                Object.keys(wrinklersNormal).length +
                 Object.keys(wrinklersShiny).length >
                 wrinklersM ||
-              Object.keys(wrinklersNormal).length +
+                Object.keys(wrinklersNormal).length +
                 Object.keys(wrinklersShiny).length >=
                 Game.getWrinklersMax()
             ) {
@@ -767,24 +767,24 @@
               // Pop Normal Wrinkler
               if (Object.keys(wrinklersNormal).length > 0) {
                 Game.wrinklers[
-                  wrinklersNormal.reduce((m, v) =>
-                    m.sucked > v.sucked ? m : v
-                  ).id
-                ].hp = 0;
-                this.say("Popping most valuable normal Wrinkler");
+                    wrinklersNormal.reduce((m, v) =>
+                        m.sucked > v.sucked ? m : v
+                    ).id
+                    ].hp = 0;
+                this.say("戳破收益最高的普通饼干虫");
               }
               // Pop Shiny if enabled and no Normal Wrinklers available.
               if (
-                Object.keys(wrinklersShiny).length > 0 &&
-                ACABM.settings.options.indexOf("popSW") != -1 &&
-                Object.keys(wrinklersNormal).length == 0
+                  Object.keys(wrinklersShiny).length > 0 &&
+                  ACABM.settings.options.indexOf("popSW") != -1 &&
+                  Object.keys(wrinklersNormal).length == 0
               ) {
                 Game.wrinklers[
-                  wrinklersShiny.reduce((m, v) =>
-                    m.sucked > v.sucked ? m : v
-                  ).id
-                ].hp = 0;
-                this.say("Popping most valuable shiny Wrinkler");
+                    wrinklersShiny.reduce((m, v) =>
+                        m.sucked > v.sucked ? m : v
+                    ).id
+                    ].hp = 0;
+                this.say("戳破收益最高的闪光饼干虫");
               }
             }
           }
@@ -809,19 +809,19 @@
 
           // If all 4 Krumblor drops are unlocked, turn off.
           if (
-            hasUnlockedScale &&
-            hasUnlockedClaw &&
-            hasUnlockedFang &&
-            hasUnlockedTeddy
+              hasUnlockedScale &&
+              hasUnlockedClaw &&
+              hasUnlockedFang &&
+              hasUnlockedTeddy
           ) {
             ACABM.settings["krumblor"] = 0;
             unlockMsg.push(
-              "You have unlocked all Krumblor upgrades: Dragon scale, Dragon claw, Dragon fang, and Dragon teddy bear."
+                "你已经解锁了所有“饼干龙”相关升级：Dragon scale, Dragon claw, Dragon fang, 和 Dragon teddy bear。"
             );
           } else {
             // If Krumblor menu is open, Dragon level is 4 or higher, and you own the Heavenly Upgrade "Pet the dragon", pet Krumblor.
             if (isKrumblorMenuOpen && dragonLevel >= 4 && hasPetDragon) {
-              unlockMsg.push("Petting Krumblor for the remaining unlock(s):");
+              unlockMsg.push("抚养饼干龙，以解锁以下升级：");
               if (!hasUnlockedScale) unlockMsg.push("Dragon scale");
               if (!hasUnlockedClaw) unlockMsg.push("Dragon claw");
               if (!hasUnlockedFang) unlockMsg.push("Dragon fang");
@@ -834,20 +834,20 @@
 
               if (!hasPetDragon) {
                 offReasons.push(
-                  'You do not own Heavenly Upgrade: "Pet the dragon".'
+                    '你尚未拥有以下所需的天堂升级："Pet the dragon".'
                 );
               } else {
                 if (!isKrumblorMenuOpen)
-                  offReasons.push("Krumblor menu is not open.");
+                  offReasons.push("饼干龙菜单尚未展开。");
 
                 if (dragonLevel < 4)
-                  offReasons.push("Dragon level is under 4.");
+                  offReasons.push("饼干龙等级尚未达到 4。");
               }
 
               unlockMsg.push(
-                "You do not meet the following requirements to Pet Krumblor:",
-                ...offReasons,
-                "Turn the option back on once you fulfill these requirements."
+                  "你尚未满足以下抚养饼干龙的所需条件：",
+                  ...offReasons,
+                  "请在满足条件后再启用本功能。"
               );
             }
           }
@@ -866,17 +866,17 @@
             Game.shimmers.forEach((shimmer) => {
               if (shimmer && shimmer.type === "golden") {
                 if (
-                  !shimmer.wrath &&
-                  ACABM.settings.options.indexOf("goldenAC") !== -1
+                    !shimmer.wrath &&
+                    ACABM.settings.options.indexOf("goldenAC") !== -1
                 ) {
                   shimmer.pop();
                 } else if (
-                  shimmer.wrath &&
-                  ACABM.settings.options.indexOf("wrathAC") !== -1
+                    shimmer.wrath &&
+                    ACABM.settings.options.indexOf("wrathAC") !== -1
                 ) {
                   if (
-                    shimmer.forceObj["wrath"] &&
-                    ACABM.settings.options.indexOf("wrathACS") !== -1
+                      shimmer.forceObj["wrath"] &&
+                      ACABM.settings.options.indexOf("wrathACS") !== -1
                   ) {
                     return;
                   } else {
@@ -884,9 +884,9 @@
                   }
                 }
               } else if (
-                shimmer &&
-                shimmer.type === "reindeer" &&
-                ACABM.settings.options.indexOf("reindeerAC") !== -1
+                  shimmer &&
+                  shimmer.type === "reindeer" &&
+                  ACABM.settings.options.indexOf("reindeerAC") !== -1
               ) {
                 shimmer.pop();
               }
@@ -936,18 +936,18 @@
           }
 
           if (
-            loading &&
-            ACABM.settings[name] === 0 &&
-            action.id &&
-            name !== "protect"
+              loading &&
+              ACABM.settings[name] === 0 &&
+              action.id &&
+              name !== "protect"
           ) {
             //console.log("clearInterval" + name);
             action.id = clearInterval(action.id);
           } else if (
-            loading &&
-            ACABM.settings[name] === 1 &&
-            !action.id &&
-            name !== "protect"
+              loading &&
+              ACABM.settings[name] === 1 &&
+              !action.id &&
+              name !== "protect"
           ) {
             //console.log("setInterval " + name);
             action.id = setInterval(action.func, action.delay);
@@ -962,9 +962,9 @@
         toggle_settings() {
           // Handle mainspeed
           if (
-            ACABM.settings["mainspeed"] &&
-            typeof ACABM.settings["mainspeed"] === "number" &&
-            this.actions.main.delay !== ACABM.settings["mainspeed"]
+              ACABM.settings["mainspeed"] &&
+              typeof ACABM.settings["mainspeed"] === "number" &&
+              this.actions.main.delay !== ACABM.settings["mainspeed"]
           ) {
             var action = this.actions["main"];
             if (!action) return;
@@ -1015,11 +1015,11 @@
           }
 
           this.say(
-            "Action: " +
+              "当前行为：" +
               name +
               (actmsg
-                ? " delay is now " + this.actions[name].delay + "ms"
-                : " delay cannot be set under 50ms")
+                  ? "现在延迟为 " + this.actions[name].delay + "ms"
+                  : "延迟无法设置到 50ms 以下")
           );
           Game.UpdateMenu();
         }
@@ -1118,8 +1118,8 @@
         const saveData = JSON.parse(str);
         ACABMsettingsKeys.forEach((key) => {
           this.settings[key] = Array.isArray(saveData[key])
-            ? [...saveData[key]]
-            : +saveData[key] || 0;
+              ? [...saveData[key]]
+              : +saveData[key] || 0;
         });
       }
     },
@@ -1131,8 +1131,8 @@
       const saveData = {};
       ACABMsettingsKeys.forEach((key) => {
         saveData[key] = Array.isArray(this.settings[key])
-          ? [...this.settings[key]]
-          : this.settings[key];
+            ? [...this.settings[key]]
+            : this.settings[key];
       });
       return JSON.stringify(saveData);
     },
@@ -1157,8 +1157,8 @@
         const menu = document.getElementById("menu");
         const titleSection = menu.querySelector(".section");
         menu.insertBefore(
-          newBlock,
-          titleSection.nextSibling.nextSibling.nextSibling
+            newBlock,
+            titleSection.nextSibling.nextSibling.nextSibling
         );
       }
     },
@@ -1180,7 +1180,7 @@
 
       const title = document.createElement("div");
       title.className = "title";
-      title.textContent = "Auto Click and Buy Mod";
+      title.textContent = "自动点击与购买模组";
       subsection.appendChild(title);
 
       const skipSetting = [
@@ -1246,39 +1246,39 @@
        * @returns {string} The HTML code for the slider element.
        */
       function createSlider(
-        slider,
-        leftText,
-        rightText,
-        startValueFunction,
-        minVal,
-        maxVal,
-        stepVal,
-        callback
+          slider,
+          leftText,
+          rightText,
+          startValueFunction,
+          minVal,
+          maxVal,
+          stepVal,
+          callback
       ) {
         if (!callback) callback = "";
         return (
-          '<div class="sliderBox">' +
-          '<div style="float:left;" class="smallFancyButton">' +
-          leftText +
-          '</div><div style="float:right;" class="smallFancyButton" id="' +
-          slider +
-          'RightText">' +
-          rightText.replace("[$]", startValueFunction()) +
-          '</div><input class="slider" style="clear:both;" type="range" min="' +
-          minVal +
-          '" max="' +
-          maxVal +
-          '" step="' +
-          stepVal +
-          '" value="' +
-          startValueFunction() +
-          '" onchange="' +
-          callback +
-          '" oninput="' +
-          callback +
-          '" onmouseup="PlaySound(\'snd/tick.mp3\');" id="' +
-          slider +
-          '"/></div>'
+            '<div class="sliderBox">' +
+            '<div style="float:left;" class="smallFancyButton">' +
+            leftText +
+            '</div><div style="float:right;" class="smallFancyButton" id="' +
+            slider +
+            'RightText">' +
+            rightText.replace("[$]", startValueFunction()) +
+            '</div><input class="slider" style="clear:both;" type="range" min="' +
+            minVal +
+            '" max="' +
+            maxVal +
+            '" step="' +
+            stepVal +
+            '" value="' +
+            startValueFunction() +
+            '" onchange="' +
+            callback +
+            '" oninput="' +
+            callback +
+            '" onmouseup="PlaySound(\'snd/tick.mp3\');" id="' +
+            slider +
+            '"/></div>'
         );
       }
 
@@ -1294,9 +1294,9 @@
         const optionIndex = settings.options.indexOf(settingKey);
 
         a.className = `smallFancyButton prefButton option ${
-          optionIndex !== -1 ? "" : "off"
+            optionIndex !== -1 ? "" : "off"
         }`;
-        a.innerText = `${title} ${optionIndex !== -1 ? "on" : "off"}`;
+        a.innerText = `${title} ${optionIndex !== -1 ? "启用" : "禁用"}`;
         a.onclick = function () {
           toggleOption(settings.options, settingKey);
           PlaySound("snd/tick.mp3");
@@ -1322,7 +1322,7 @@
       const prefButtonClass = "prefButton";
 
       a.className = `${smallFancyButtonClass} ${prefButtonClass} option${
-        settings[id] > 0 ? "" : " off"
+          settings[id] > 0 ? "" : " off"
       }`;
       a.innerText = `${name} ${values[settings[id]]}`;
       a.onclick = function () {
@@ -1330,21 +1330,21 @@
         settings[id] = newValue;
 
         if (
-          id === "autobuy" &&
-          settings[id] &&
-          settings.options.indexOf("ABExpand") == -1
+            id === "autobuy" &&
+            settings[id] &&
+            settings.options.indexOf("ABExpand") == -1
         ) {
           settings.options.push("ABExpand");
         } else if (
-          id === "wrinklers" &&
-          settings[id] &&
-          settings.options.indexOf("AWExpand") == -1
+            id === "wrinklers" &&
+            settings[id] &&
+            settings.options.indexOf("AWExpand") == -1
         ) {
           settings.options.push("AWExpand");
         } else if (
-          id === "gold" &&
-          settings[id] &&
-          settings.options.indexOf("AGExpand") == -1
+            id === "gold" &&
+            settings[id] &&
+            settings.options.indexOf("AGExpand") == -1
         ) {
           settings.options.push("AGExpand");
         }
@@ -1359,9 +1359,9 @@
         let a = document.createElement("a");
         a.className = `smallFancyButton`;
         a.innerText = `${
-          settings.options.indexOf("ABExpand") != -1
-            ? "Collapse Options"
-            : "Expand Options"
+            settings.options.indexOf("ABExpand") != -1
+                ? "折叠选项"
+                : "展开选项"
         }`;
         a.onclick = function () {
           if (settings.options.indexOf("ABExpand") != -1) {
@@ -1379,9 +1379,9 @@
         let a = document.createElement("a");
         a.className = `smallFancyButton`;
         a.innerText = `${
-          settings.options.indexOf("AWExpand") != -1
-            ? "Collapse Options"
-            : "Expand Options"
+            settings.options.indexOf("AWExpand") != -1
+                ? "折叠选项"
+                : "展开选项"
         }`;
         a.onclick = function () {
           if (settings.options.indexOf("AWExpand") != -1) {
@@ -1399,9 +1399,9 @@
         let a = document.createElement("a");
         a.className = `smallFancyButton`;
         a.innerText = `${
-          settings.options.indexOf("AGExpand") != -1
-            ? "Collapse Options"
-            : "Expand Options"
+            settings.options.indexOf("AGExpand") != -1
+                ? "折叠选项"
+                : "展开选项"
         }`;
         a.onclick = function () {
           if (settings.options.indexOf("AGExpand") != -1) {
@@ -1425,14 +1425,14 @@
         listing.appendChild(labelabmsg);
         let a = document.createElement("a");
         a.className = `smallFancyButton`;
-        a.innerText = `Manual Refresh`;
+        a.innerText = `手动刷新`;
         a.onclick = function () {
           PlaySound("snd/tick.mp3");
           Game.UpdateMenu();
         };
         listing.appendChild(a);
         var label = document.createElement("label");
-        label.innerText = `(Refresh AutoBuy Status message manually if needed.)`;
+        label.innerText = `(如果你需要的话，手动刷新自动购买所需等待时间。)`;
         listing.appendChild(label);
       }
 
@@ -1449,27 +1449,27 @@
       }
 
       if (
-        (id === "autobuy" &&
-          settings[id] &&
-          settings.options.indexOf("ABExpand") != -1) ||
-        (id === "autobuy" && settings.options.indexOf("ABExpand") != -1)
+          (id === "autobuy" &&
+              settings[id] &&
+              settings.options.indexOf("ABExpand") != -1) ||
+          (id === "autobuy" && settings.options.indexOf("ABExpand") != -1)
       ) {
         var labelupgrades = document.createElement("div");
-        labelupgrades.innerHTML = `<p></p><p><div style="font-size:1em;">Vault Upgrades <label>While Enabled the upgrade will be removed from the AutoBuy pool. This is for people who did not get the Inspired Checklist upgrade yet to Vault upgrades. This is a static list, if you want more added submit a comment on the Steam Workshop mod site.</label></div></p>`;
+        labelupgrades.innerHTML = `<p></p><p><div style="font-size:1em;">升级保险箱<label>启用时，选中的升级将不会自动购买。这是为那些尚未获得 Inspired Checklist 升级到 Vault 的人准备的。这是一个静态列表，如果你想添加更多，请前往创意工坊上提交评论。</label></div></p>`;
         for (var i = 0; i < UPPids.length; i++) {
           let UUP = Game.UpgradesById[UPPids[i]];
           let a = document.createElement("a");
           a.className = `smallFancyButton prefButton option${
-            settings.upgradevault.indexOf(UUP.id) != -1 ? "" : " off"
+              settings.upgradevault.indexOf(UUP.id) != -1 ? "" : " off"
           }`;
-          a.innerText = `${UUP.name} ${
-            settings.upgradevault.indexOf(UUP.id) != -1 ? "on" : " off"
+          a.innerText = `${UUP.dname} ${
+              settings.upgradevault.indexOf(UUP.id) != -1 ? "启用" : "禁用"
           }`;
           a.onclick = function () {
             if (settings.upgradevault.indexOf(UUP.id) != -1) {
               settings.upgradevault.splice(
-                settings.upgradevault.indexOf(UUP.id),
-                1
+                  settings.upgradevault.indexOf(UUP.id),
+                  1
               );
             } else {
               settings.upgradevault.push(UUP.id);
@@ -1481,21 +1481,21 @@
         }
 
         var labeltech = document.createElement("div");
-        labeltech.innerHTML = `<p></p><p><div style="font-size:1em;">Vault Tech Upgrades <label>While Enabled the tech upgrade will be removed from the AutoBuy pool.</label></div></p>`;
+        labeltech.innerHTML = `<p></p><p><div style="font-size:1em;">科技升级保险箱<label>启用时，选中的科技将不会自动购买。</label></div></p>`;
         for (var i = 0; i < Game.UpgradesByPool["tech"].length; i++) {
           let UBP = Game.UpgradesByPool["tech"][i];
           let a = document.createElement("a");
           a.className = `smallFancyButton prefButton option${
-            settings.upgradevault.indexOf(UBP.id) != -1 ? "" : " off"
+              settings.upgradevault.indexOf(UBP.id) != -1 ? "" : " off"
           }`;
-          a.innerText = `${UBP.name} ${
-            settings.upgradevault.indexOf(UBP.id) != -1 ? "on" : " off"
+          a.innerText = `${UBP.dname} ${
+              settings.upgradevault.indexOf(UBP.id) != -1 ? "启用" : "禁用"
           }`;
           a.onclick = function () {
             if (settings.upgradevault.indexOf(UBP.id) != -1) {
               settings.upgradevault.splice(
-                settings.upgradevault.indexOf(UBP.id),
-                1
+                  settings.upgradevault.indexOf(UBP.id),
+                  1
               );
             } else {
               settings.upgradevault.push(UBP.id);
@@ -1507,21 +1507,21 @@
         }
 
         var labelbuildings = document.createElement("div");
-        labelbuildings.innerHTML = `<p></p><p><div style="font-size:1em;">Vault Buildings <label>While Enabled the building will be removed from the AutoBuy pool.</label></div></p>`;
+        labelbuildings.innerHTML = `<p></p><p><div style="font-size:1em;">建筑保险箱<label>启用时，选中的建筑将不会自动购买。</label></div></p>`;
         for (var i = 0; i < Game.ObjectsById.length; i++) {
           let UBI = Game.ObjectsById[i];
           let a = document.createElement("a");
           a.className = `smallFancyButton prefButton option ${
-            settings.buildingvault.indexOf(UBI.id) != -1 ? "" : " off"
+              settings.buildingvault.indexOf(UBI.id) != -1 ? "" : " off"
           }`;
-          a.innerText = `${UBI.name} ${
-            settings.buildingvault.indexOf(UBI.id) != -1 ? "on" : " off"
+          a.innerText = `${UBI.dname} ${
+              settings.buildingvault.indexOf(UBI.id) != -1 ? "启用" : "禁用"
           }`;
           a.onclick = function () {
             if (settings.buildingvault.indexOf(UBI.id) != -1) {
               settings.buildingvault.splice(
-                settings.buildingvault.indexOf(UBI.id),
-                1
+                  settings.buildingvault.indexOf(UBI.id),
+                  1
               );
             } else {
               settings.buildingvault.push(UBI.id);
@@ -1539,135 +1539,135 @@
         const labelhotkeys = document.createElement("div");
         const h4 = document.createElement("h4");
         h4.style.fontSize = "1.25em";
-        h4.innerText = "Keyboard Shortcuts";
+        h4.innerText = "键盘快捷键";
         labelhotkeys.appendChild(h4);
 
         const p1 = document.createElement("p");
-        p1.innerHTML = `M (Main) <label>Autoclicks Big Cookie.</label>`;
+        p1.innerHTML = `M <label>自动点击大饼干</label>`;
         labelhotkeys.appendChild(p1);
 
         const div1 = document.createElement("div");
         div1.className = "listing";
         const p2 = document.createElement("p");
-        p2.innerHTML = `Shift + 1 <label>Increase Click Delay</label>`;
+        p2.innerHTML = `Shift+1 <label>增加点击间隔</label>`;
         const p3 = document.createElement("p");
-        p3.innerHTML = `Shift + 2 <label>Decrease Click Delay</label>`;
+        p3.innerHTML = `Shift+2 <label>减少点击间隔</label>`;
         div1.appendChild(p2);
         div1.appendChild(p3);
         labelhotkeys.appendChild(div1);
 
         const p4 = document.createElement("p");
-        p4.innerHTML = `G (Gold) <label>Autoclicks Shimmers Golden cookie, Reindeer, ect.</label>`;
+        p4.innerHTML = `G <label>自动点击黄金饼干、驯鹿饼干、愤怒饼干。</label>`;
         labelhotkeys.appendChild(p4);
 
         const p5 = document.createElement("p");
-        p5.innerHTML = `F (Frenzy) <label>Autoclicks Big Cookie during frenzy/click frenzy.</label>`;
+        p5.innerHTML = `F <label>自动在狂热/幸运期间点击大饼干。</label>`;
         labelhotkeys.appendChild(p5);
 
         const p6 = document.createElement("p");
-        p6.innerHTML = `A (Autobuy) <label>Buys "best CPS" buildings and upgrades automatically.</label>`;
+        p6.innerHTML = `A <label>自动购买“最优CpS”的升级、建筑。</label>`;
         labelhotkeys.appendChild(p6);
 
         const div2 = document.createElement("div");
         div2.className = "listing";
-        div2.innerHTML = `It does not just "buy" buildings/upgrades you can afford, but attempts to buy the best buildings/upgrades.<br>If you do not see the script buying. It is waiting for the best option to become available.<br>When the item is calculated to be available to purchase within 150 seconds, it will be added to queue for purchase.<br>You will see a "Waiting x to buy Y" pop-up and can view the remaining time in the Status popup.`;
+        div2.innerHTML = `注意本功能不是只会购买你买得起的建筑/升级，而是会尝试购买最优的建筑/升级。<br>如果你当前没看到本功能自动购买，那是因为它正在等待最优的选项变得买得起。<br>等最优选项买得起时，将会在 150 秒内自动购买。<br>你可以在屏幕下方看到“等待 X 秒以购买 XX”`;
         labelhotkeys.appendChild(div2);
 
         const p7 = document.createElement("p");
-        p7.innerHTML = `S (Status popup) <label>Displays mod status and if there is a buy waiting in queue</label>`;
+        p7.innerHTML = `S <label>在等待购买最优建筑/升级时在屏幕下方弹出提示</label>`;
         labelhotkeys.appendChild(p7);
 
         const p8 = document.createElement("p");
-        p8.innerHTML = `P (Protect) <label>Calculates Lucky and Frenzy requirements so that autobuy doesn't go below them.</label>`;
+        p8.innerHTML = `P <label>计算触发狂热/幸运所需的饼干数，以确保不会买东西买过头。</label>`;
         labelhotkeys.appendChild(p8);
 
         const p9 = document.createElement("p");
-        p9.innerHTML = `N (Fortune) <label>Autoclicks on News ticker fortunes.</label>`;
+        p9.innerHTML = `N <label>自动点击幸运纸条。</label>`;
         labelhotkeys.appendChild(p9);
 
         const p10 = document.createElement("p");
-        p10.innerHTML = `W (Wrinklers) <label>Pops the single fattest normal (excluding Shiny) wrinkler if you are at your max.</label>`;
+        p10.innerHTML = `W <label>饼干虫超过你设置的数量上限后，自动戳破收益最大的那只（闪光饼干虫除外）</label>`;
         labelhotkeys.appendChild(p10);
 
         const p11 = document.createElement("p");
-        p11.innerHTML = `Z (Ascend Luck) <label>Automatically ascends you when your total Prestige/Ascend Meter contains "7" four(4) times to unlock 'Lucky Payout' (if you don't already have it)</label>`;
+        p11.innerHTML = `Z <label>当你威望等级中包含四个 "7" 时自动飞升，以解锁 'Lucky Payout' 成就（如果已经有这个成就了，则本功能无效）</label>`;
         labelhotkeys.appendChild(p11);
 
         listing.appendChild(labelhotkeys);
       } else if (id === "main" && settings[id]) {
         var labelautoclick = document.createElement("div");
         var slider = createSlider(
-          "ACABMClickSlider",
-          loc("AutoClick Speed"),
-          "[$]/ms",
-          function () {
-            return ACABM.settings["mainspeed"];
-          },
-          50,
-          3000,
-          50,
-          "Game.mods['Auto click and buy Mod'].settings.mainspeed=Number(l('ACABMClickSlider').value);l('ACABMClickSliderRightText').innerHTML=l('ACABMClickSlider').value + '/ms';"
+            "ACABMClickSlider",
+            loc("自动点击速度"),
+            "[$]/ms",
+            function () {
+              return ACABM.settings["mainspeed"];
+            },
+            50,
+            3000,
+            50,
+            "Game.mods['Auto click and buy Mod'].settings.mainspeed=Number(l('ACABMClickSlider').value);l('ACABMClickSliderRightText').innerHTML=l('ACABMClickSlider').value + '/ms';"
         );
         labelautoclick.innerHTML = slider;
         listing.appendChild(labelautoclick);
       } else if (
-        (id === "wrinklers" &&
-          settings[id] &&
-          settings.options.indexOf("AWExpand") != -1) ||
-        (id === "wrinklers" && settings.options.indexOf("AWExpand") != -1)
+          (id === "wrinklers" &&
+              settings[id] &&
+              settings.options.indexOf("AWExpand") != -1) ||
+          (id === "wrinklers" && settings.options.indexOf("AWExpand") != -1)
       ) {
         if (
-          settings.wrinklersmax == -1 ||
-          settings.wrinklersmax > Game.getWrinklersMax() - 1
+            settings.wrinklersmax == -1 ||
+            settings.wrinklersmax > Game.getWrinklersMax() - 1
         ) {
           settings.wrinklersmax = Game.getWrinklersMax() - 1;
         }
         var labelwrinklers = document.createElement("div");
         var slider = createSlider(
-          "ACABMWrinklersSlider",
-          loc("Max Wrinklers to keep"),
-          "[$]",
-          function () {
-            return ACABM.settings["wrinklersmax"];
-          },
-          0,
-          Game.getWrinklersMax() - 1,
-          1,
-          "Game.mods['Auto click and buy Mod'].settings.wrinklersmax=Number(l('ACABMWrinklersSlider').value);l('ACABMWrinklersSliderRightText').innerHTML=l('ACABMWrinklersSlider').value;"
+            "ACABMWrinklersSlider",
+            loc("最大保留饼干虫数量"),
+            "[$]",
+            function () {
+              return ACABM.settings["wrinklersmax"];
+            },
+            0,
+            Game.getWrinklersMax() - 1,
+            1,
+            "Game.mods['Auto click and buy Mod'].settings.wrinklersmax=Number(l('ACABMWrinklersSlider').value);l('ACABMWrinklersSliderRightText').innerHTML=l('ACABMWrinklersSlider').value;"
         );
         labelwrinklers.innerHTML = slider;
         listing.appendChild(labelwrinklers);
 
         createButton(
-          "Pop Shiny Wrinklers",
-          "popSW",
-          "(While enabled, Shiny Wrinklers will be popped if no Normal Wrinklers exist and you have reacehd your Wrinkler Max)"
+            "戳破闪光饼干虫",
+            "popSW",
+            "(启用后，将会在没有任何普通饼干虫、且闪光饼干虫超出你所设置的最大数量后，戳破最大收益的闪光饼干虫)"
         );
       } else if (
-        (id === "gold" &&
-          settings[id] &&
-          settings.options.indexOf("AGExpand") != -1) ||
-        (id === "gold" && settings.options.indexOf("AGExpand") != -1)
+          (id === "gold" &&
+              settings[id] &&
+              settings.options.indexOf("AGExpand") != -1) ||
+          (id === "gold" && settings.options.indexOf("AGExpand") != -1)
       ) {
         createButton(
-          "Golden Cookies",
-          "goldenAC",
-          "(While enabled Golden Cookies will be clicked)"
+            "黄金饼干",
+            "goldenAC",
+            "(启用后将会自动点击黄金饼干)"
         );
         createButton(
-          "Wrath Cookies",
-          "wrathAC",
-          "(While enabled Wrath Cookies will be clicked)"
+            "愤怒饼干",
+            "wrathAC",
+            "(启用后将会自动点击愤怒饼干)"
         );
         createButton(
-          "Skip Forced Wrath",
-          "wrathACS",
-          "(While enabled Wrath Cookies with Forced Wrath (High % of receiving negative effects) will not be clicked)"
+            "跳过强制愤怒饼干",
+            "wrathACS",
+            "(启用后，将不会点击强制愤怒饼干（超过一定概率获得负面特性的愤怒饼干）)"
         );
         createButton(
-          "Reindeer Cookies",
-          "reindeerAC",
-          "(While enabled Reindeer Cookies will be clicked)"
+            "驯鹿饼干",
+            "reindeerAC",
+            "(启用后将会自动点击驯鹿饼干)"
         );
       }
       return listing;
